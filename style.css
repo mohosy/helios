@@ -1,0 +1,100 @@
+:root {
+  --bg: #0b1113;
+  --panel: #1a2a2a;
+  --line: #4f7371;
+  --text: #edf7f6;
+  --muted: #acc8c6;
+  --accent: #8fe2cc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Chakra Petch", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 78% 8%, #2f695f, #193432 44%, #0b1113 100%);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 400px) 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.panel,
+.viz {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(152deg, rgba(25, 42, 42, 0.98), rgba(11, 19, 19, 0.96));
+}
+
+.panel { padding: 1rem; }
+.viz { padding: 0.8rem; }
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
+h1 { margin: 0.42rem 0; font-size: clamp(1.5rem, 2vw, 2rem); }
+.desc { margin: 0 0 0.85rem; line-height: 1.45; color: var(--muted); }
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: rgba(9, 16, 16, 0.76);
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.card h2 { margin: 0 0 0.5rem; font-size: 0.92rem; color: #dcf8f2; }
+
+label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.42rem;
+  align-items: center;
+  margin: 0.34rem 0;
+  color: #cde8e4;
+  font-size: 0.87rem;
+}
+
+input[type="range"] { grid-column: 1 / span 2; accent-color: var(--accent); }
+
+button {
+  width: 100%;
+  border: 1px solid #6aa79d;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3f8779, #2f6a61);
+  color: #f3fffd;
+  padding: 0.52rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.38rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+}
+
+.metrics p { margin: 0.32rem 0; color: #d4f0eb; }
+
+canvas {
+  width: 100%;
+  height: auto;
+  border: 1px solid #5f948c;
+  border-radius: 10px;
+  background: #081110;
+}
+
+@media (max-width: 1100px) {
+  .layout { grid-template-columns: 1fr; }
+}
